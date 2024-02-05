@@ -1,3 +1,6 @@
+var exchangeContainer = document.querySelector(".exchangeData");
+
+
 const options = {
   method: "GET",
   headers: {
@@ -12,26 +15,41 @@ var getNews = function() {
 
     fetch(apiUrl, options)
     .then(function (response) {
-      return response.text();
+      return response.json();
     })
     .then(function (data) {
-      console.log(data);
+    //   console.log(data.news);
+      displayNews(data.news);
     })
     .catch(function (error) {
       console.log(error);
     });
 }
 
+var displayNews = function (data) {
+    for (var i = 0; i < data.length; i++) {
+        var linkEL = document.createElement('h2');
+
+        linkEL.textContent =data[i].link;
+
+        exchangeContainer.append(linkEL);
+      
+    }
+  };
+
 var getExchangeRate = function () {
     var apiUrl =
-  "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=USD&to_symbol=MXN&apikey=FY31FW4DXC7KAPXA";
+  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.min.json";
+
+  
 
   fetch(apiUrl)
     .then(function (response) {
       return response.json();  
     })
     .then(function (data) {
-      console.log(data);
+      console.log(data)
+    //   displayExchange(data);
     })
     .catch(function (error) {
       console.log(error);
