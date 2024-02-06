@@ -1,5 +1,5 @@
 var exchangeContainer = document.querySelector(".exchangeData");
-
+var fromCu = document.getElementById('fromCu');
 
 const options = {
   method: "GET",
@@ -38,18 +38,21 @@ var displayNews = function (data) {
   };
 
 var getExchangeRate = function () {
-    var apiUrl =
+    var currenciesApiUrl =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.min.json";
 
-  
 
-  fetch(apiUrl)
+  fetch(currenciesApiUrl)
     .then(function (response) {
       return response.json();  
     })
     .then(function (data) {
-      console.log(data)
-    //   displayExchange(data);
+      
+        for (i in data ){
+            const option1  = new Option (data[i],i)
+            fromCu.add(option1)
+        }
+
     })
     .catch(function (error) {
       console.log(error);
