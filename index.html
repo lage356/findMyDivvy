@@ -3,76 +3,89 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--link stylesheet here-->
-    <link rel="stylesheet"/> 
+    <!--*Link to Foundation's CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous"> 
+    <!--*Link to Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Quicksand&display=swap" rel="stylesheet">
+    <!--*link to CSS stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css"/> 
     <title>Convert your currency</title>
 </head>
 
 <body>
      <!--This is the header/navbar section-->  
     <header> 
-    <nav>
-        <h1>FindMyDivvy</h1>
-        <ul>
-            <a href="#currency-converter"></a>
-            <a href="#news"></a>
-        </ul> 
-
-    </nav>
+        
+            <h1>FindMyDivvy</h1>
+            <div id="spaceH1"></div>
+            <div id="anchors">
+                <a href="#currency-converter" class="text-center">Currency Converter</a>
+                <div id="spaceNav"></div>
+                <a href="#news">News</a>
+            </div>
+        
     </header>
     
-        <main>
+    <main>
 
         <!--Display date at the top-->
-        <div class="js-date"></div>
+        <div class="js-date">Wednesday, February 7, 2024</div>
 
-    <section>
+        <section class="currencyLayout">
 
-        <div>
-            <h2>MXN</h2>
-            <form class="">
+            <div>
+                <h2>MXN</h2>
+                <form class="">
+                <input type="text" class="text-center" placeholder="Enter amount" id=""/>
+            </div>
 
-                <h2>Enter amount</h2>
-                <input type="text" id=""/>
+
+            <div>
+                <h2>USD</h2>
+                <div class="text-center" id="convertedValue">
+                    <h3>Converted value</h3>
+                </div>
                 
-        </div>
+            </div>
 
-        <div>
-            <h2>USD</h2>
-                <h2>Converted value</h2>
-            
-        </div>
+        </section>
 
         <div class="">
-            <button class="" type="submit" >Swap!</button>
+            <button class="button text" type="submit" >Swap!</button>
         </div>
-
-    </section>
  
-    <!--News section-->   
-    <section>
-        <h2>Currency News</h2>
-        
-        <div class="col-1">
-            <div></div>
-            <div></div>
-        </div>
+        <!--News section-->   
+        <section>
+            <h2>Currency News</h2>
+            
+            <div class="col-1">
+                <div></div>
+                <div></div>
+            </div>
 
-        <div class="col-2">
-            <div></div>
-            <div></div>
-        </div>
+            <div class="col-2">
+                <div></div>
+                <div></div>
+            </div>
 
-        <div class="col-3">
-            <div></div>
-            <div></div>
-        </div>
-    </section>
+            <div class="col-3">
+                <div></div>
+                <div></div>
+            </div>
+        </section>
 
     </main>
 
     <!--Link to jQuery library-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!--*Link to Foundation's JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <!--*Script to initialize Foundation and enable its features-->
+    <script>
+        $(document).foundation();
+    </script>
 
     </body>
 </html>
