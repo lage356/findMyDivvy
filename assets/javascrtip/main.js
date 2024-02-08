@@ -46,11 +46,19 @@ var getExchangeRate = function () {
     .then(function (response) {
       return response.json();  
     })
-    .then(function (data) {
-      
+    .then(function (data) { 
+      console.log(data)
+
         for (i in data ){
+      
             const option1  = new Option (data[i],i)
-            fromCu.add(option1)
+            if(data[i] === "US Dollar"){
+              fromCu.add(option1)
+            }else if (data[i]== "Mexican Peso"){
+              fromCu.add(option1)
+            }
+            
+          
         }
 
     })
@@ -58,5 +66,25 @@ var getExchangeRate = function () {
       console.log(error);
     });
 };
+
+var getUSDval = function () {
+  var getBaseUsd = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json"
+
+
+fetch(getBaseUsd)
+  .then(function (response) {
+    return response.json();  
+  })
+  .then(function (data) { 
+    
+    let tipoCambio = data.usd.mxn;
+    console.log(tipoCambio);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+};
+
+
 getExchangeRate();
-getNews();
+getUSDval();
