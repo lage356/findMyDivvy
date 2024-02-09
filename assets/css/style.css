@@ -46,20 +46,43 @@ main {
 
 .currencyLayout {
     display: flex;
-    justify-content: space-evenly;
 }
 
 input {
-    width: 300px !important;
     height: 300px !important;
+    width: 100% !important; 
+    border-radius: 5px !important;
+    border: 1px solid black !important;
 }
 
 #convertedValue {
-    background-color: red;
-    width: 300px;
+    background-color: lightgrey;
     height: 300px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    ;
 }
 
+
+.button-container {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+
+.center-text{
+    text-align: center;
+    color: blue 
+
+}
+
+.space-currency{
+    margin-left: 20px;
+}
 
 
 /*
