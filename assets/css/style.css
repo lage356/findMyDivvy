@@ -1,3 +1,111 @@
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+header {
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+#spaceH1 {
+
+}
+
+#spaceNav {
+    margin-left: 25px;
+}
+
+a {
+    color: white;
+}
+
+#anchors {
+    display: flex;
+    margin-top: 25px;
+}
+
+main {
+    margin: 20px;
+}
+
+.js-date {
+    text-align: end;
+}
+
+.currencyLayout {
+    display: flex;
+}
+
+input {
+    height: 300px !important;
+    width: 100% !important; 
+    border-radius: 5px !important;
+    border: 1px solid black !important;
+}
+
+#convertedValue {
+    background-color: lightgrey;
+    height: 300px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    ;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+
+.center-text{
+    text-align: center;
+    color: blue 
+
+}
+
+.space-currency{
+    margin-left: 20px;
+}
+
+
+/*
+p,
+ul, ol,
+dl, dd, dt,
+figure,
+blockquote,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+button,
+input,
+select,
+optgroup,
+option
+*/
+
+/*
 #exchangeData {
     display: flex;
     flex-wrap: wrap;
@@ -40,3 +148,5 @@
 .card a:hover {
     background-color: #218838;
 }
+
+*/
