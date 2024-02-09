@@ -56,29 +56,26 @@ var displayNews = function (data) {
 };
 
 
+document.getElementById('convertir').addEventListener('click', function() {
+  const cantidad = document.getElementById('cantidad').value;
+  const tipoConversion = document.getElementById('tipoConversion').value;
+  let urlApi = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/';
+  if (tipoConversion === 'usdToMxn') {
+      urlApi += 'usd/mxn.json';
+  } else if (tipoConversion === 'mxnToUsd') {
+      urlApi += 'mxn/usd.json';
+  }
 
+  fetch(urlApi)
+  .then(response => response.json())
+  .then(data => {
+      const tipoCambio = tipoConversion === 'usdToMxn' ? data.mxn : data.usd;
+      const resultado = cantidad * tipoCambio;
+      const mensaje = tipoConversion === 'usdToMxn' 
+          ? `${cantidad} USD es igual a ${resultado.toFixed(2)} MXN`
+          : `${cantidad} MXN es igual a ${resultado.toFixed(2)} USD`;
+      document.getElementById('resultado').innerHTML = mensaje;
+  })
+});
 
-
-var getExchangeRate = function () {
-    var currenciesApiUrl =
-  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.min.json";
-
-
-  fetch(currenciesApiUrl)
-    .then(function (response) {
-      return response.json();  
-    })
-    .then(function (data) {
-      
-        for (i in data ){
-            const option1  = new Option (data[i],i)
-            fromCu.add(option1)
-        }
-
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
-getExchangeRate();
 getNews();
