@@ -1,124 +1,127 @@
-
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-}
-
-h1 {
-    font-family: 'Quicksand', sans-serif;
-}
-
-h2, h3, h4, h5, h6 {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: blue;
+    background-color: #333;
     color: white;
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-
+    align-items: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-#spaceH1 {
-
+.logo h1 {
+    margin: 0;
 }
 
-#spaceNav {
-    margin-left: 25px;
+.menu {
+    list-style-type: none;
+    padding: 0;
 }
 
-a {
+.menu li {
+    display: inline;
+}
+
+.menu li a {
     color: white;
+    text-decoration: none;
 }
 
-#anchors {
-    display: flex;
-    margin-top: 25px;
+.menu li a:hover {
+    text-decoration: none;
+    color: #f3ff3f;
 }
 
-main {
-    margin: 20px;
+.menu li a:hover {
+    text-decoration: underline;
 }
 
-.js-date {
+.day,
+.convert {
+    padding: 20px;
+    max-width: 900px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.text-days {
     text-align: end;
+    font-size: 18px;
+    color: #333;
 }
 
-.currencyLayout {
+.conversion-form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px auto;
 }
 
-input {
-    height: 300px !important;
-    width: 100% !important; 
-    border-radius: 5px !important;
-    border: 1px solid black !important;
-}
-
-#convertedValue {
-    background-color: lightgrey;
-    height: 300px;
+.conversion-form input,
+.conversion-form select {
     width: 100%;
-    border: 1px solid black;
-    border-radius: 5px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.conversion-form button {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 15px;
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.conversion-form button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.news h2 {
+    color: #333;
     text-align: center;
-    ;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-
-.button-container {
-  display: flex;
-  justify-content: center;
-
-
-}
-
-
-.center-text{
-    text-align: center;
-    color: blue 
-
-}
-
-.space-currency{
-    margin-left: 20px;
-}
-
-
-/*
-p,
-ul, ol,
-dl, dd, dt,
-figure,
-blockquote,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-button,
-input,
-select,
-optgroup,
-option
-*/
-
-/*
-#exchangeData {
+.exchangeData {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; 
-    padding: 20px;
-    justify-content: center; 
+    gap: 20px;
+    justify-content: center;
 }
 
 .card {
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 300px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
     overflow: hidden;
 }
 
@@ -128,6 +131,7 @@ option
     background-color: #007bff;
     color: white;
     font-size: 20px;
+    height: 100%;
 }
 
 .card p {
@@ -143,10 +147,15 @@ option
     text-align: center;
     margin: 0 15px 15px;
     border-radius: 4px;
+    margin-bottom: 30px !important;
 }
 
 .card a:hover {
     background-color: #218838;
 }
 
-*/
+section.News,
+section.Convert {
+    padding: 20px;
+    text-align: center;
+}
