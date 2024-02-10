@@ -1,7 +1,7 @@
 var exchangeContainer = document.getElementById('exchangeData');
 var fromCu = document.getElementById('fromCu');
 
-var currentDayEl = $('#currentDay')
+
 
 //add date at the top
 var today = dayjs();
@@ -53,7 +53,7 @@ var displayNews = function (data) {
         publisherEl.textContent = "Publisher: " + newsItem.publisher;
         linkEl.setAttribute('href', newsItem.link);
         linkEl.setAttribute('target', '_blank'); // Abre en una nueva pestaña
-        linkEl.textContent = "Leer más";
+        linkEl.textContent = "Continue reading";
 
         // Construir la tarjeta
         cardEl.appendChild(titleEl);
@@ -83,8 +83,8 @@ document.getElementById('convertir').addEventListener('click', function() {
       const tipoCambio = tipoConversion === 'usdToMxn' ? data.mxn : data.usd;
       const resultado = cantidad * tipoCambio;
       const mensaje = tipoConversion === 'usdToMxn' 
-          ? `${cantidad} USD es igual a ${resultado.toFixed(2)} MXN`
-          : `${cantidad} MXN es igual a ${resultado.toFixed(2)} USD`;
+          ? `${cantidad} USD equals ${resultado.toFixed(2)} MXN`
+          : `${cantidad} MXN equals ${resultado.toFixed(2)} USD`;
       document.getElementById('resultado').innerHTML = mensaje;
   })
 });

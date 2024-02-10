@@ -56,10 +56,10 @@ input {
     border: 1px solid black !important;
 }
 
-#convertedValue {
+.converted-value {
     background-color: lightgrey;
     height: 300px;
-    width: 100%;
+    width: 100% imo !important;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
@@ -77,8 +77,6 @@ input {
 
 .center-text{
     text-align: center;
-    color: blue 
-
 }
 
 .space-currency{
@@ -105,7 +103,7 @@ optgroup,
 option
 */
 
-/*
+
 #exchangeData {
     display: flex;
     flex-wrap: wrap;
@@ -125,7 +123,7 @@ option
 .card h2 {
     margin: 0;
     padding: 15px;
-    background-color: #007bff;
+    background-color: blue;
     color: white;
     font-size: 20px;
 }
@@ -137,16 +135,25 @@ option
 .card a {
     display: block;
     padding: 10px 15px;
-    background-color: #28a745;
+    background-color: rgb(1, 106, 1);
     color: white;
     text-decoration: none;
     text-align: center;
-    margin: 0 15px 15px;
+    margin: 15px 15px 15px;
     border-radius: 4px;
 }
 
 .card a:hover {
-    background-color: #218838;
+    background-color: rgb(1, 106, 1);
 }
 
-*/
+.dropdown {
+    width: 445px;
+}
+
+.converter-area{
+    margin:auto;
+    width:400px;
+    padding:10px;
+}
+

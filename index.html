@@ -31,54 +31,74 @@
             <h1>FindMyDivvy</h1>
             <div id="spaceH1"></div>
             <div id="anchors">
-                <a href="#currency-converter" class="text-center">Currency Converter</a>
+                <a href="#Currency-Converter" class="text-center">Currency Converter</a>
                 <div id="spaceNav"></div>
-                <a href="#news">News</a>
+                <a href="#Currency-News">Currency News</a>
             </div>
         
     </header>
     
     <main>
 
-        <!--Display date at the top-->
+    <!--Display date at the top-->
         <p id="currentDay" class="js-date"></p>
 
+        <h2 class="center-text">Currency Converter</h2>
+   
+        <!--this is the dropdown menu-->    
+        <div class="converter-area"> 
+        <div class="dropdown">
+            <select id="tipoConversion" class="dropdown">
+                <option value="mxnToUsd">MXN a USD</option>
+                <option value="usdToMxn">USD a MXN</option>
+            </select>
+        </div>
+        
+
+    <!--Currency converter area--> 
+  
         <section class="currencyLayout">
-
+        </select>
             <div class="center-text">
-                <h2>MXN</h2>
-                <form class="">
-                <input type="text" class="text-center" placeholder="Enter amount" id=""/>
+
+            <!--box for input area-->   
+             
+            <input id="cantidad" type="text" class="text-center" placeholder="Enter amount"/>
             </div>
-
             <div class="space-currency"></div>
-
             <div class="center-text">
-                <h2>USD</h2>
-                <div class="text-center" id="convertedValue">
+
+               <!--box for converted value-->
+                <div class="converted-value" id="resultado">
                     <h3 class="text-converted">Converted value</h3>
                 </div>
             </div>
-
-          
+  
 
         </section>
 
-        <div class="button-container">
-            <button class="button text" type="submit">Convert</button>
-        </div>
- 
+       <!--this is the convert button--> 
+        <div class="converter-area"></div>
+        <button id="convertir" class="button large">Convert</button>
+    <div id="resultado"></div>
+    </div>    
+
+
+
         <!--News section-->   
         <section>
             <h2>Currency News</h2>
             
+            <div id="exchangeData"></div>
+
+
             <div class="col-1">
                 <div id=""></div>
                 <div></div>
             </div>
 
             <div class="col-2">
-                <div></div>
+                <div id="exchangeData"></div>
                 <div></div>
             </div>
 
@@ -126,6 +146,8 @@
     <!--*Script to initialize Foundation and enable its features-->
     <script>
         $(document).foundation();
+
+
     </script>
 
     <script src="./assets/javascrtip/main.js"></script>
