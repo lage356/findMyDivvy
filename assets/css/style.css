@@ -1,6 +1,7 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
+    
 }
 
 h1 {
@@ -12,98 +13,110 @@ h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-color: blue;
+    background-color: rgb(101, 170, 190);
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-
-}
-
-#spaceH1 {
-
+    padding-right: 2%;
+    padding-left: 10px;
 }
 
 #spaceNav {
-    margin-left: 25px;
+    margin-left: 50px;
 }
 
 a {
     color: white;
+    font-size: 150%;
 }
 
 #anchors {
     display: flex;
-    margin-top: 25px;
+    align-items: center;
 }
 
 main {
-    margin: 20px;
+    margin: 30px;
 }
 
 .js-date {
     text-align: end;
+    margin-bottom: 1%;
+}
+
+#currentRate {
+    margin-bottom: 3%;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    font-size: 110%;
+    border: 1px solid black;
+}
+
+select {
+    background-color: rgb(240, 240, 240) !important;
+   
+}
+
+.marginCurrecyConverter {
+    margin-left: 6%;
+}
+
+.currencyConverterBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .currencyLayout {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.currencyBoxes {
+    flex: 0 1 calc(50% - 10px); /* 50% width with some margin */
+    text-align: center;
+    /*display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;*/
 }
 
 input {
-    height: 300px !important;
-    width: 100% !important; 
+    height: 200px !important;
     border-radius: 5px !important;
-    border: 1px solid black !important;
+    border: 1px solid rgb(148, 143, 143) !important;
+    font-size: 25px !important;
 }
+
 
 #convertedValue {
-    background-color: lightgrey;
-    height: 300px;
-    width: 100%;
-    border: 1px solid black;
+    background-color: rgb(217, 217, 217);
+    height: 200px;
+    border: 1px solid rgb(148, 143, 143);
     border-radius: 5px;
-    text-align: center;
-    ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-
-.button-container {
-  display: flex;
-  justify-content: center;
-
-
+.button {
+    font-size: 120%;
+    transition: transform 0.01s;
+    border-radius: 7px;
 }
 
-
-.center-text{
-    text-align: center;
-    color: blue 
-
+.button:hover {
+    font-size: 122%;
 }
 
-.space-currency{
-    margin-left: 20px;
+.button:active {
+    transform: scale(0.99);
 }
 
-
-/*
-p,
-ul, ol,
-dl, dd, dt,
-figure,
-blockquote,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-button,
-input,
-select,
-optgroup,
-option
-*/
+@media (max-width: 450px) {
+}
 
 /*
 #exchangeData {
