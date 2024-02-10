@@ -1,6 +1,16 @@
 var exchangeContainer = document.getElementById('exchangeData');
 var fromCu = document.getElementById('fromCu');
 
+var currentDayEl = $('#currentDay')
+
+//add date at the top
+var today = dayjs();
+$('#currentDay').text (today.format('dddd MMMM D, YYYY'))
+
+
+
+//News API
+
 const options = {
   method: "GET",
   headers: {
@@ -55,6 +65,7 @@ var displayNews = function (data) {
   }
 };
 
+//Currency API
 
 document.getElementById('convertir').addEventListener('click', function() {
   const cantidad = document.getElementById('cantidad').value;
