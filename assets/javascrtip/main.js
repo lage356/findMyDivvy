@@ -1,3 +1,6 @@
+var today = dayjs();
+$('#today').text(today.format('MMM D, YYYY'));
+
 var exchangeContainer = document.getElementById('exchangeData');
 var fromCu = document.getElementById('fromCu');
 
@@ -40,7 +43,7 @@ var displayNews = function (data) {
 
         // Asignar contenido
         titleEl.textContent = newsItem.title;
-        publisherEl.textContent = "Publisher: " + newsItem.publisher;
+        publisherEl.textContent = newsItem.publisher;
         linkEl.setAttribute('href', newsItem.link);
         linkEl.setAttribute('target', '_blank'); // Abre en una nueva pestaña
         linkEl.textContent = "Leer más";
@@ -56,25 +59,25 @@ var displayNews = function (data) {
 };
 
 
-document.getElementById('convertir').addEventListener('click', function() {
-  const cantidad = document.getElementById('cantidad').value;
-  const tipoConversion = document.getElementById('tipoConversion').value;
+document.getElementById('convert').addEventListener('click', function() {
+  const amount = document.getElementById('amount').value;
+  const ConversionType = document.getElementById('ConversionType').value;
   let urlApi = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/';
-  if (tipoConversion === 'usdToMxn') {
+  if (ConversionType === 'usdToMxn') {
       urlApi += 'usd/mxn.json';
-  } else if (tipoConversion === 'mxnToUsd') {
+  } else if (ConversionType === 'mxnToUsd') {
       urlApi += 'mxn/usd.json';
   }
 
   fetch(urlApi)
   .then(response => response.json())
   .then(data => {
-      const tipoCambio = tipoConversion === 'usdToMxn' ? data.mxn : data.usd;
-      const resultado = cantidad * tipoCambio;
-      const mensaje = tipoConversion === 'usdToMxn' 
-          ? `${cantidad} USD es igual a ${resultado.toFixed(2)} MXN`
-          : `${cantidad} MXN es igual a ${resultado.toFixed(2)} USD`;
-      document.getElementById('resultado').innerHTML = mensaje;
+      const exchangeRate = ConversionType === 'usdToMxn' ? data.mxn : data.usd;
+      const result = amount * exchangeRate;
+      const message = ConversionType === 'usdToMxn' 
+          ? `${amount} USD to ${result.toFixed(2)} MXN`
+          : `${amount} MXN to ${result.toFixed(2)} USD`;
+      document.getElementById('result').innerHTML = message;
   })
 });
 
