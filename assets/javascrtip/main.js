@@ -10,7 +10,6 @@ $('#currentDay').text (today.format('dddd MMMM D, YYYY'))
 
 
 //News API
-
 const options = {
   method: "GET",
   headers: {

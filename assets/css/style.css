@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Quicksand';
 }
 
 h1 {
@@ -8,7 +8,7 @@ h1 {
 }
 
 h2, h3, h4, h5, h6 {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 header {
@@ -148,7 +148,7 @@ option
 }
 
 .dropdown {
-    width: 445px;
+    width: 350px;
 }
 
 .converter-area{
@@ -157,3 +157,6 @@ option
     padding:10px;
 }
 
+.convert-button {
+    align-items: center;
+}
