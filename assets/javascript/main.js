@@ -7,7 +7,7 @@ var fromCu = document.getElementById('fromCu');
 const options = {
   method: "GET",
   headers: {
-		'X-RapidAPI-Key': '4d5a27013fmshb24446b95c71a58p1e6be4jsn42011879c0a9',
+		'X-RapidAPI-Key': '03b2b11eabmshc11bc0e309c3ac9p1431cajsn49e731b9c888',
 		'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
 	}
 };
@@ -20,7 +20,6 @@ var getNews = function() {
     return response.json();
   })
   .then(function (data) {
-      console.log(data.news);
       displayNews(data.news);
   })
   .catch(function (error) {
@@ -30,33 +29,32 @@ var getNews = function() {
 
 var displayNews = function (data) {
 
+    
+    const tilesContainer =document.getElementById('tiles-container')  ;
+
     for (var i = 0; i < data.length; i++) {
-        var newsItem = data[i];
+        var tileData = data[i];
+        
+        const tileElement = document.createElement('div');
+        tileElement.classList.add('tile', 'is-parent');
+      
 
-        // Crear la estructura de la tarjeta
-        var cardEl = document.createElement('div');
-        cardEl.className = 'card';
+        const tileContent = `
+        <article class="tile is-child box has-background-info">
+          <p class="title has-text-light custom-font">${tileData.title}</p>
+          <p class="subtitle is-3 custom-font">${tileData.publisher}</p>
+          <div class= "box is-bordered">
+          <a class="subtitle is-4  is-bordered custom-font" href="${tileData.link}" target="_blank">Read More</a>
+          </div>
+        </article>
+      `;
 
-        var titleEl = document.createElement('h2');
-        var publisherEl = document.createElement('p');
-        var linkEl = document.createElement('a');
+      tileElement.innerHTML = tileContent;
 
-        // Asignar contenido
-        titleEl.textContent = newsItem.title;
-        publisherEl.textContent = newsItem.publisher;
-        linkEl.setAttribute('href', newsItem.link);
-        linkEl.setAttribute('target', '_blank'); // Abre en una nueva pestaña
-        linkEl.textContent = "Leer más";
-
-        // Construir la tarjeta
-        cardEl.appendChild(titleEl);
-        cardEl.appendChild(publisherEl);
-        cardEl.appendChild(linkEl);
-
-        // Añadir la tarjeta al contenedor
-        exchangeContainer.appendChild(cardEl);
+        tilesContainer.appendChild(tileElement);
   }
 };
+
 
 
 document.getElementById('convert').addEventListener('click', function() {

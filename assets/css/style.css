@@ -8,7 +8,9 @@ header {
     background-color: #333;
     color: white;
 }
-
+.custom-font{
+    font-family: 'Oswald', sans-serif;
+}
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -102,13 +104,13 @@ header {
     color: #333;
 }
 
-.news h2 {
+/* .news h2 {
     color: #333;
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
     padding: 20px;
-}
+} */
 
 .exchangeData {
     display: flex;
@@ -154,7 +156,7 @@ header {
     background-color: #218838;
 }
 
-section.News,
+
 section.Convert {
     padding: 20px;
     text-align: center;
