@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif; /** added google font body */
     margin: 0;
     padding: 0;
 }
@@ -16,6 +16,21 @@ header {
     padding: 20px;
     max-width: 900px;
     margin: 0 auto;
+}
+h1 {
+    font-family: 'Quicksand', sans-serif; /** added specific google font to the h1 element signifying the webpage's title*/
+}
+h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans JP', sans-serif; /** added same google font as body to the rest of the headers */
+}
+
+/** added hide class to display local storage text*/
+.hide {
+    display: none;
+}
+
+#valueOfLS {
+    width: fit-content;
 }
 
 .logo h1 {
@@ -45,19 +60,20 @@ header {
     text-decoration: underline;
 }
 
-.day,
+/*.day,
 .convert {
     padding: 20px;
     max-width: 900px;
     background-color: #fff;
     margin: auto;
-}
+    flex-direction: ;
+}*/
 
-.text-days {
+/*.text-days {
     text-align: end;
     font-size: 18px;
     color: #333;
-}
+}*/
 
 .conversion-form {
     display: flex;
