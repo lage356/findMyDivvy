@@ -1,161 +1,41 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif; /** added google font body */
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: #333;
+h1 {
+    font-family: 'Quicksand', sans-serif; /** added specific google font to the h1 element signifying the webpage's title*/
+}
+h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans JP', sans-serif; /** added same google font as body to the rest of the headers */
+}
+/** added hide class to display local storage text*/
+.hide {
+    display: none;
+}
+#valueOfLS {
+    width: fit-content;
+}
+/** End of my code */
+
+
+
+.navbar {
+    background-color: rgb(95, 163, 182);
+  }
+  
+  h1 {
     color: white;
-}
+    font-size:xx-large
+  }
+    .navbar-item {
+        color: #FFFFFF;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+  .navbar-item:hover {
+    color: #000000;
+    background-color: #F2E1E1;
+  }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.logo h1 {
-    margin: 0;
-}
-
-.menu {
-    list-style-type: none;
-    padding: 0;
-}
-
-.menu li {
-    display: inline;
-}
-
-.menu li a {
-    color: white;
-    text-decoration: none;
-}
-
-.menu li a:hover {
-    text-decoration: none;
-    color: #f3ff3f;
-}
-
-.menu li a:hover {
-    text-decoration: underline;
-}
-
-.day,
-.convert {
-    padding: 20px;
-    max-width: 900px;
-    background-color: #fff;
-    margin: auto;
-}
-
-.text-days {
-    text-align: end;
-    font-size: 18px;
-    color: #333;
-}
-
-.conversion-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
-    margin: 20px auto;
-}
-
-.conversion-form input,
-.conversion-form select {
-    width: 100%;
-    margin: 5px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.conversion-form button {
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 15px;
-    width: 100%;
-    margin: 5px 0;
-    border-radius: 4px;
-}
-
-.conversion-form button:hover {
-    background-color: #0056b3;
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #333;
-}
-
-.news h2 {
-    color: #333;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-.exchangeData {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    overflow: hidden;
-}
-
-.card h2 {
-    margin: 0;
-    padding: 15px;
-    background-color: #007bff;
-    color: white;
-    font-size: 20px;
-    height: 100%;
-}
-
-.card p {
-    padding: 0 15px 15px;
-}
-
-.card a {
-    display: block;
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    margin: 0 15px 15px;
-    border-radius: 4px;
-    margin-bottom: 30px !important;
-}
-
-.card a:hover {
-    background-color: #218838;
-}
-
-section.News,
-section.Convert {
-    padding: 20px;
-    text-align: center;
-}
+  /* end of navbar styiling */
