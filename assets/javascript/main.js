@@ -12,7 +12,7 @@ var fromCu = document.getElementById('fromCu');
 // 	}
 // };
 
-var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD,FOREX:MXN&time_from=20220410T0130&limit=5&apikey=Q4AC8RF8H1NCP94G';
+var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD,FOREX:MXN&time_from=20220410T0130&limit=5&apikey=OU5F7U44A3TPPFCX';
 
 
 var getNews = function() {
@@ -46,7 +46,7 @@ var displayNews = function (data) {
           <p class="title has-text-light custom-font">${tileData.title}</p>
           <p class="subtitle is-3 custom-font">${tileData.source}</p>
           <div class= "box is-bordered">
-          <a class="subtitle is-4  is-bordered custom-font" href="${tileData.link}" target="_blank">Read More</a>
+          <a class="subtitle is-4  is-bordered custom-font" href="${tileData.url}" target="_blank">Read More</a>
           </div>
         </article>
       `;
