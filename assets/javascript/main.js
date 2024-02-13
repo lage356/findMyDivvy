@@ -7,6 +7,12 @@ var fromCu = document.getElementById('fromCu');
 
 // wrapping all code that interacts with the dom within this function:
 $(function () {
+  const burgerIcon = document.querySelector("#burger");
+const navBarMenu = document.querySelector("#navbar-links");
+burgerIcon.addEventListener("click", () =>{
+    navBarMenu.classList.toggle("is-active");
+});
+  
   // function to update time, date, and currency values in real time
 function updateTime() {
   var now = dayjs();
@@ -56,10 +62,10 @@ function saveToLS() {
   var dataString =JSON.stringify(data);
   localStorage.setItem('savedText', dataString);
   console.log(localStorage);
-  displayText();
+  //displayText();
 }
 
-var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD&time_from=20220410T0130&limit=5&apikey=OU5F7U44A3TPPFCX';
+//var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD&time_from=20220410T0130&limit=5&apikey=YPJ5D5262N1MWF6L';
 
 
 var getNews = function() {
@@ -123,8 +129,8 @@ document.getElementById('convert').addEventListener('click', function() {
       const exchangeRate = ConversionType === 'usdToMxn' ? data.mxn : data.usd;
       const result = amount * exchangeRate;
       const message = ConversionType === 'usdToMxn'
-          ? `${amount} USD to ${result.toFixed(2)} MXN`
-          : `${amount} MXN to ${result.toFixed(2)} USD`;
+          ? `${result.toFixed(2)} MXN`
+          : `${result.toFixed(2)} USD`;
       document.getElementById('result').innerHTML = message;
   })
 });

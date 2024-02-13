@@ -40,7 +40,7 @@
                 <div class="navbar-end">
                     <a href="#Convertor" class="navbar-item">Convertor</a>
                     <a href="#News" class="navbar-item">News</a>
-                    <a href="https://github.com/lage356/findMyDivvy" class="navbar-item">Source</a>
+                    <a href="https://github.com/lage356/findMyDivvy" target="_blank" class="navbar-item">Source</a>
                 </div>
             </div>
         </nav>
@@ -65,11 +65,11 @@
         <h2 class="has-text-weight-bold is-family-primary has-text-centered is-size-2">Currency Converter</h2>
         <div class="container is-max-desktop">
             <div class="notification is-info">
-                <div class="conversion-form">
+                <div class="conversion-form is-flex is-flex-direction-column is-align-items-center">
                     <!-- Input area -->
                     <input id="amount" type="text" class="input is-info is-hovered" placeholder="Enter amount"></input>
                     <!-- Dropdown menu -->
-                    <div class="select is-info is-hovered is-normal">
+                    <div class="select is-info is-hovered is-normal mt-5">
                         <select id="ConversionType">
                             <option value="mxnToUsd">MXN to USD</option>
                             <option value="usdToMxn">USD to MXN</option>
@@ -78,16 +78,18 @@
                     <br><br>
                     <!-- Convert button -->
                     <button id="convert" class="button is-medium is-warning">Convert</button>
-                    <div class="has-text-white" id="result"></div>
+                    <div class="has-text-white m-4" id="result"></div>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section class="News">
-        <h2>News</h2>
-        <div id="exchangeData" class="exchangeData"></div>
+    <section class="News m-5">
+
+        <div id="tiles-container" class="tile is-ancestor">
+
+        </div>
     </section>
     <!-- Link the DayJS library -->
     

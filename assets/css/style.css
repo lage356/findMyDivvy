@@ -30,7 +30,7 @@ h2, h3, h4, h5, h6 {
     font-size:xx-large
   }
     .navbar-item {
-        color: #FFFFFF;
+        color: black;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
   .navbar-item:hover {
