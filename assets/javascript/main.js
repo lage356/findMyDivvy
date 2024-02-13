@@ -12,7 +12,7 @@ var fromCu = document.getElementById('fromCu');
 // 	}
 // };
 
-var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD,FOREX:MXN&time_from=20220410T0130&limit=5&apikey=OU5F7U44A3TPPFCX';
+var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD&time_from=20220410T0130&limit=5&apikey=OU5F7U44A3TPPFCX';
 
 
 var getNews = function() {
@@ -57,28 +57,5 @@ var displayNews = function (data) {
   }
 };
 
-
-
-document.getElementById('convert').addEventListener('click', function() {
-  const amount = document.getElementById('amount').value;
-  const ConversionType = document.getElementById('ConversionType').value;
-  let urlApi = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/';
-  if (ConversionType === 'usdToMxn') {
-      urlApi += 'usd/mxn.json';
-  } else if (ConversionType === 'mxnToUsd') {
-      urlApi += 'mxn/usd.json';
-  }
-
-  fetch(urlApi)
-  .then(response => response.json())
-  .then(data => {
-      const exchangeRate = ConversionType === 'usdToMxn' ? data.mxn : data.usd;
-      const result = amount * exchangeRate;
-      const message = ConversionType === 'usdToMxn' 
-          ? `${amount} USD to ${result.toFixed(2)} MXN`
-          : `${amount} MXN to ${result.toFixed(2)} USD`;
-      document.getElementById('result').innerHTML = message;
-  })
-});
 
 getNews();
