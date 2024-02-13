@@ -14,22 +14,22 @@ $(function () {
     var apiUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/';
     
     // Fetch data for 1 USD to MXN conversion
-    fetch(apiUrl + 'usd/mxn.json')
+    fetch(apiUrl + 'mxn/usd.json')
         .then(response => response.json())
         .then(data => {
-            const exchangeRate = data.mxn;
-            document.getElementById('mxnToday').textContent = `🇺🇲 1 USD = $${(exchangeRate).toFixed(2)} MXN`;
+            const exchangeRate = data.usd;
+            document.getElementById('mxnToday').textContent = `🇲🇽 1 MXN = $${(exchangeRate).toFixed(2)} USD`;
         })
         .catch(error => {
             console.error('Error fetching currency rates:', error);
         });
 
     // Fetch data for 1 MXN to USD conversion
-    fetch(apiUrl + 'mxn/usd.json')
+    fetch(apiUrl + 'usd/mxn.json')
     .then(response => response.json())
     .then(data => {
-      const exchangeRate = data.usd;
-      document.getElementById('usdToday').textContent = `🇲🇽 1 MXN  = $${(exchangeRate).  toFixed(2)} USD`;
+      const exchangeRate = data.mxn;
+      document.getElementById('usdToday').textContent = `🇺🇲 1 USD  = $${(exchangeRate).  toFixed(2)} MXN`;
     })
   }
   // Update date and time immediately
