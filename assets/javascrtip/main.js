@@ -1,6 +1,6 @@
 ///// TODO date and time updates in real time
 ///// TODO Current exchange rate
-// TODO Alert
+///// TODO Alert
 ///// TODO Local Storage
 
 // wrapping all code that interacts with the dom within this function:
@@ -9,7 +9,7 @@ $(function () {
   function updateTime() {
     var now = dayjs();
     $('#today').text(now.format('dddd, MMMM DD, YYYY')); //! date
-    $('#hour').text(now.format('h:mm A')); //! time
+    $('#hour').text(now.format('h:mm:ss A')); //! time
     
     var apiUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/';
     
@@ -29,7 +29,7 @@ $(function () {
     .then(response => response.json())
     .then(data => {
       const exchangeRate = data.usd;
-      document.getElementById('usdToday').textContent = `🇲🇽 1 MXN  = ${(exchangeRate).  toFixed(2)} USD`;
+      document.getElementById('usdToday').textContent = `🇲🇽 1 MXN  = $${(exchangeRate).  toFixed(2)} USD`;
     })
   }
   // Update date and time immediately
