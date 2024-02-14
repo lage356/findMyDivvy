@@ -80,7 +80,7 @@ $(function () {
     } 
   }
 
-  //var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD&time_from=20220410T0130&limit=5&apikey=210UWE1WJU146YH8';
+  var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD&time_from=20220410T0130&limit=5&apikey=EL260C8RXAZ8WAYE';
 
   var getNews = function () {
     fetch(apiUrl)
