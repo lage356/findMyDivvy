@@ -6,8 +6,8 @@ var fromCu = document.getElementById("fromCu");
 
 // wrapping all code that interacts with the dom within this function:
 $(function () {
-  const burgerIcon = document.querySelector("#burger");
-  const navBarMenu = document.querySelector("#navbar-links");
+  var burgerIcon = document.querySelector("#burger");
+  var navBarMenu = document.querySelector("#navbar-links");
   burgerIcon.addEventListener("click", () => {
     navBarMenu.classList.toggle("is-active");
   });
@@ -23,7 +23,7 @@ $(function () {
     fetch(apiUrl + "mxn/usd.json")
       .then((response) => response.json())
       .then((data) => {
-        const exchangeRate = data.usd;
+        var exchangeRate = data.usd;
         document.getElementById(
           "mxnToday"
         ).textContent = `🇲🇽 1 MXN = $${exchangeRate.toFixed(2)} USD`;
@@ -35,7 +35,7 @@ $(function () {
     fetch(apiUrl + "usd/mxn.json")
       .then((response) => response.json())
       .then((data) => {
-        const exchangeRate = data.mxn;
+        var exchangeRate = data.mxn;
         document.getElementById(
           "usdToday"
         ).textContent = `🇺🇸 1 USD  = $${exchangeRate.toFixed(2)} MXN`;
@@ -77,9 +77,7 @@ $(function () {
       var dataString = JSON.stringify(data);
       localStorage.setItem("savedText", dataString);
       console.log(localStorage);
-    } else {
-      console.log("El valor ingresado no es numérico y no se guardará.");
-    }
+    } 
   }
 
   //var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD&time_from=20220410T0130&limit=5&apikey=210UWE1WJU146YH8';
@@ -99,15 +97,15 @@ $(function () {
   };
 
   var displayNews = function (data) {
-    const tilesContainer = document.getElementById("tiles-container");
+    var tilesContainer = document.getElementById("tiles-container");
 
     for (var i = 0; i < 5; i++) {
       var tileData = data[i];
 
-      const tileElement = document.createElement("div");
+      var tileElement = document.createElement("div");
       tileElement.classList.add("tile", "is-parent");
 
-      const tileContent = `
+      var tileContent = `
         <article class="tile is-child box has-background-info">
           <p class="title has-text-light custom-font">${tileData.title}</p>
           <p class="subtitle is-3 custom-font">${tileData.source}</p>
@@ -124,9 +122,9 @@ $(function () {
   };
 
   document.getElementById("convert").addEventListener("click", function () {
-    const amountInput = document.getElementById("amount");
-    const amountValue = amountInput.value.trim();
-    const amount = parseFloat(amountValue);
+    var amountInput = document.getElementById("amount");
+    var amountValue = amountInput.value.trim();
+    var amount = parseFloat(amountValue);
 
     if (
       amountValue === "" ||
@@ -138,7 +136,7 @@ $(function () {
       return;
     }
 
-    const ConversionType = document.getElementById("ConversionType").value;
+    var ConversionType = document.getElementById("ConversionType").value;
     let urlApi =
       "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
     if (ConversionType === "usdToMxn") {
@@ -149,10 +147,10 @@ $(function () {
     fetch(urlApi)
       .then((response) => response.json())
       .then((data) => {
-        const exchangeRate =
+        var exchangeRate =
           ConversionType === "usdToMxn" ? data.mxn : data.usd;
-        const result = amount * exchangeRate;
-        const message =
+        var result = amount * exchangeRate;
+        var message =
           ConversionType === "usdToMxn"
             ? `${result.toFixed(2)} MXN`
             : `${result.toFixed(2)} USD`;
