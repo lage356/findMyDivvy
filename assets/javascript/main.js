@@ -65,7 +65,7 @@ function saveToLS() {
 //displayText();
 }
 
-var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD&time_from=20220410T0130&limit=5&apikey=YPJ5D5262N1MWF6L';
+//var apiUrl = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=FOREX:USD&time_from=20220410T0130&limit=5&apikey=210UWE1WJU146YH8';
 
 
 var getNews = function() {
