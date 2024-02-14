@@ -1,58 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--*Link to Foundation's CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
-        crossorigin="anonymous">
-    <!--*Link to Google Fonts-->
+    <!-- Link the bulma framework library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- *Link to Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Quicksand&display=swap" rel="stylesheet">
+
     <!--*link to CSS stylesheet-->
     <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Convert your currency</title>
+</head>
+
+<body>
+    <!-- Nav bar section -->
+    <header>
+        <nav class="navbar is-vcentered is-spaced">
+            <div class="navbar-brand">
+                <a class="navbar-item">
+                    <h1>FindMyDivvy</h1>
+                    <span></span>
+                    <span></span>
+                       <span></span>
+                </a><!-- responsiveness change to burger menu -->
+                <a class="navbar-burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+        <!-- anchors to different sections -->
+            <div class="navbar-menu" id="navbar-links">
+                <div class="navbar-end">
+                    <a href="#Convertor" class="navbar-item">Convertor</a>
+                    <a href="#News" class="navbar-item">News</a>
+                    <a href="https://github.com/lage356/findMyDivvy" target="_blank" class="navbar-item">Source</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- This section if for the date, hour, and saved data within the local storage-->
+    
+    <div class="m-5 has-text-right">
+        <p id="today" class="is-size-6">Today...</p>
+        <p id="hour" class="is-size-6">The hour is...</p>
+    </div>
+
+    <div class="m-5">
+        <div class="box has-background-info has-text-white">
+            <p id="mxnToday" class="is-size-5">🇲🇽 1 MXN = $ USD.</p>
+            <p id="usdToday" class="is-size-5">🇺🇸 1 USD = $ MXN.</p>
+        </div>
+    </div>
+       
+        <div id="valueOfLS" class="box ml-5 has-background-danger has-text-white hide">Last inputted value...</div>
+
+    
+    <!--Currency converter area Maria-->
+    <section id="Convertor" class="Convertor">
+        <h2 class="has-text-weight-bold is-family-primary has-text-centered is-size-2">Currency Converter</h2>
+        <div class="container is-max-desktop">
+            <div class="notification is-info">
+                <div class="conversion-form is-flex is-flex-direction-column is-align-items-center">
+                    <!-- Input area -->
+                    <input id="amount" type="text" class="input is-info is-hovered" placeholder="Enter amount"></input>
+                    <!-- Dropdown menu -->
+                    <div class="select is-info is-hovered is-normal mt-5">
+                        <select id="ConversionType">
+                            <option value="mxnToUsd">MXN to USD</option>
+                            <option value="usdToMxn">USD to MXN</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <!-- Convert button -->
+                    <button id="convert" class="button is-medium is-warning">Convert</button>
+                    <div class="has-text-white m-4" id="result"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- El modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Please enter a valid number</p>
+    </div>
+  </div>
+  
+    <section id="News" class="News m-6 ">
+
+        <div id="tiles-container" class="tile is-ancestor">
+
+        </div>
+    </section>
     <!-- Link the DayJS library -->
+    
+   
+
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <title>Convert your currency</title>
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>FindMyDivvy</h1>
-            </div>
-            <nav>
-                <ul class="menu">
-                    <li><a href="#currency-converter">Currency Converter</a></li>
-                    <li><a href="#news">News</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class="day">
-        <p id="today" class="text-days">Today.....</p>
-    </section>
-    <section class="Convert">
-        <h2>Currency Converte</h2>
-        <div class="conversion-form">
-            <input type="text" id="amount" placeholder="Enter quantity">
-            <select id="ConversionType">
-                <option value="mxnToUsd">MXN to USD</option>
-                <option value="usdToMxn">USD to MXN</option>
-            </select>
-            <button id="convert">Convert</button>
-            <div id="result"></div>
-        </div>
-    </section>
-    <section class="News">
-        <h2>News</h2>
-        <div id="exchangeData" class="exchangeData"></div>
-    </section>
-    <script src="/assets/javascrtip/main.js"></script>
+
+        <script src="assets/javascript/main.js"></script>
 </body>
+
 </html>
